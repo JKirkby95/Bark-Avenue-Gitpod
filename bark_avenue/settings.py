@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
     '8000-jkirkby95-barkavenuegit-p1buhfw5yud.ws-eu108.gitpod.io',
     'bark-avenue1.herokuapp.com',
     'localhost',
+    'bark-avenue1-9df2e78c0c7f.herokuapp.com',
 ]
 
 
