@@ -1,1 +1,1 @@
-web: gunicorn codestar.wsgi
+web: gunicorn bark_avenue.wsgi
