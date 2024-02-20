@@ -6,3 +6,6 @@ class IndexView(TemplateView):
 
 class BookingView(TemplateView):
     template_name = 'booking.html'
+
+class LoginView(TemplateView):
+    template_name = 'login.html'
