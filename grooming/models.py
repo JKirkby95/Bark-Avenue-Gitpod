@@ -1,24 +1,24 @@
 from django.db import models
 
 # class' for the customer , pet ,groomer and appointments 
-class Customer(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100)
-    phone_number = models.CharField(max_length=20)
-    address = models.TextField()
+# class Customer(models.Model):
+#     name = models.CharField(max_length=100)
+#     email = models.EmailField(max_length=100)
+#     phone_number = models.CharField(max_length=20)
+#     address = models.TextField()
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
-class Pet(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-    breed = models.CharField(max_length=100)
-    age = models.IntegerField()
-    comments = models.TextField(blank=True)
+# class Pet(models.Model):
+#     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+#     name = models.CharField(max_length=100)
+#     breed = models.CharField(max_length=100)
+#     age = models.IntegerField()
+#     comments = models.TextField(blank=True)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 class Groomer(models.Model):
     name = models.CharField(max_length=100)
@@ -28,8 +28,8 @@ class Groomer(models.Model):
         return self.name
 
 class Appointment(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
+    customer = models.CharField(max_length=100)
+    pet = models.CharField(max_length=100)
     groomer = models.ForeignKey(Groomer, on_delete=models.CASCADE)
     appointment_date = models.DateField()
     appointment_time = models.TimeField()

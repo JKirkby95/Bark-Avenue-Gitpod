@@ -3,5 +3,10 @@
 {% block title %}Booking - Bark Avenue Groomers{% endblock %}
 
 {% block content %}
-<p>Make a booking!</p>
+    <h1>Book Appointment</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
 {% endblock %}
