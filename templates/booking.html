@@ -4,9 +4,26 @@
 
 {% block content %}
     <h1>Book Appointment</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Submit</button>
-        </form>
+    <form method="post" onsubmit="displayAppointmentConfirmation()">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Define function to display appointment confirmation
+        function displayAppointmentConfirmation() {
+            console.log("Appointment confirmation function called");
+            // Get form elements by their IDs
+            var pet = document.getElementById("id_pet").value;
+            var service = document.getElementById("id_service").value;
+            var appointment_date = document.getElementById("id_appointment_date").value;
+    
+            // Create the appointment information string
+            var appointmentInfo = pet + " is booked in for " + service + " on " + appointment_date;
+    
+            // Display appointment confirmation in a pop-up
+            alert("Appointment Booked:\n" + appointmentInfo);
+        }
+    </script>
 {% endblock %}

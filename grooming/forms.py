@@ -14,6 +14,7 @@ class AppointmentForm(forms.ModelForm):
             'customer',
             'pet',
             'groomer',
+            'service',
             ]
         labels = {
             'appointment_date' : 'Select a date for your appointment.',
