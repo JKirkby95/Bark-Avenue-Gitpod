@@ -3,11 +3,11 @@
 {% block title %}Booking - Bark Avenue Groomers{% endblock %}
 
 {% block content %}
-    <h1>Book Appointment</h1>
-    <form method="post" onsubmit="displayAppointmentConfirmation()">
+    <form method="post" onsubmit="displayAppointmentConfirmation()" class="mx-auto">
+        <h3 class="text-center">Book Appointment</h3>
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Submit</button>
+        <button type="submit" class="login-btn">Submit</button>
     </form>
 
     <script>
@@ -16,14 +16,26 @@
             console.log("Appointment confirmation function called");
             // Get form elements by their IDs
             var pet = document.getElementById("id_pet").value;
-            var service = document.getElementById("id_service").value;
+            
+            // Get the service element
+            var serviceElement = document.getElementById("id_service");
+            // Get the selected service's text
+            var service = serviceElement.options[serviceElement.selectedIndex].text;
+    
             var appointment_date = document.getElementById("id_appointment_date").value;
     
+            // Get the groomer element
+            var groomerElement = document.getElementById("id_groomer");
+            // Get the selected groomer's text
+            var groomer = groomerElement.options[groomerElement.selectedIndex].text;
+    
             // Create the appointment information string
-            var appointmentInfo = pet + " is booked in for " + service + " on " + appointment_date;
+            var appointmentInfo = pet + " is booked in for " + service + " on " + appointment_date + " with " + groomer;
     
             // Display appointment confirmation in a pop-up
             alert("Appointment Booked:\n" + appointmentInfo);
         }
     </script>
+    
+    
 {% endblock %}
