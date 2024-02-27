@@ -2,7 +2,6 @@ from django import forms
 from .models import Appointment, Groomer
 from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
 from django.contrib.auth.models import User
-
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -56,7 +55,6 @@ class LoginForm(AuthenticationForm):
 
 
 class AppointmentForm(forms.ModelForm):
-    customer = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     pet = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
@@ -64,7 +62,6 @@ class AppointmentForm(forms.ModelForm):
         fields = [
             'appointment_date',
             'appointment_time',
-            'customer',
             'pet',
             'groomer',
             'service',
