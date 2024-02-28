@@ -8,13 +8,18 @@
         <p>Number of appointments: {{ user_appointments.count }}</p>
         <ul>
             {% for appointment in user_appointments %}
+            <div>
                 <li>
                     <strong>Date:</strong> {{ appointment.appointment_date }}<br>
                     <strong>Time:</strong> {{ appointment.appointment_time }}<br>
                     <strong>Pet:</strong> {{ appointment.pet }}<br>
                     <strong>Groomer:</strong> {{ appointment.groomer }}<br>
                     <strong>Service:</strong> {{ appointment.service }}<br>
+                    <a href="/edit-appointment/{{ appointment.id }}">
+                        <button class="btn btn-primary">Edit</button>
+                    </a>
                 </li>
+            </div>
             {% endfor %}
         </ul>
     {% else %}

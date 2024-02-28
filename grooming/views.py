@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LogoutView
 from django.utils.decorators import method_decorator
+from django.shortcuts import get_object_or_404
 
 class IndexView(TemplateView):
     ''' 
@@ -35,6 +36,28 @@ class BookingView(TemplateView):
             # Redirect to a success page or home page
             return redirect('index')
         return render(request, self.template_name, {'form': form})
+
+class EditAppointmentView(TemplateView):
+    template_name = 'edit_appointment.html'
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def get(self, request, appointment_id):
+        appointment = get_object_or_404(Appointment, id=appointment_id)
+        form = AppointmentForm(instance=appointment)
+        return render(request, self.template_name, {'form': form, 'appointment_id': appointment_id})
+
+    def post(self, request, appointment_id):
+        appointment = get_object_or_404(Appointment, id=appointment_id)
+        form = AppointmentForm(request.POST, instance=appointment)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+        else:
+            # Form is not valid, render the form again with errors
+            return HttpResponseBadRequest("Form submission failed. Please check the form and try again.")
 
 class SignupView(FormView):
     template_name = 'signup.html'
