@@ -5,23 +5,33 @@ form {
     border-radius: 20px;
     margin-top: 150px;
 }
+
 body {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,14,154,1)35%, rgba(0,212,255,1)100%);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(75, 14, 154, 1)35%, rgba(0, 212, 255, 1)100%);
 }
-.login-btn{
+.login-btn {
     width: 100%;
     border: none;
     border-radius: 50px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,14,154,1)35%, rgba(0,212,255,1)100%);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(75, 14, 154, 1)35%, rgba(0, 212, 255, 1)100%);
 }
-.form-control{
-    color: rgba(0,0,0,.8);
-    border-bottom-color: rgba(0,0,0,.4);
+
+.form-control {
+    color: rgba(0, 0, 0, .8);
+    border-bottom-color: rgba(0, 0, 0, .4);
     box-shadow: none !important;
     border: none;
     border-bottom: 1px solid;
     border-radius: 4px 4px 0 0;
-} 
+}
+
 h3 {
     margin-bottom: 10px;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
 }

@@ -14,8 +14,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Bark Avenue Groomers</a>
-        <!-- Add your navigation links here -->
+        <a class="navbar-brand" href="{% url 'index' %}">Bark Avenue Groomers</a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'index' %}">Home</a>
@@ -42,6 +41,7 @@
             </li>
         </ul>
     </nav>
+
     <div class="container">
         {% block content %}
         {% endblock %}
