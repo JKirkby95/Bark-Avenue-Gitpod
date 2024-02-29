@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, View
 from .forms import AppointmentForm, SignUpForm, LoginForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
@@ -9,6 +9,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth.views import LogoutView
 from django.utils.decorators import method_decorator
 from django.shortcuts import get_object_or_404
+from django.http import HttpResponseNotAllowed
+
 
 class IndexView(TemplateView):
     ''' 
@@ -59,6 +61,18 @@ class EditAppointmentView(TemplateView):
             # Form is not valid, render the form again with errors
             return HttpResponseBadRequest("Form submission failed. Please check the form and try again.")
 
+
+class DeleteAppointmentView(View):
+    def get(self, request, appointment_id):
+        # Return HTTP 405 (Method Not Allowed) for GET requests
+        return HttpResponseNotAllowed(['POST'])
+
+    def post(self, request, appointment_id):
+        appointment = get_object_or_404(Appointment, id=appointment_id)
+        appointment.delete()
+        # Redirect to the appointments page after deleting the appointment
+        return redirect('appointments')
+
 class SignupView(FormView):
     template_name = 'signup.html'
     form_class = SignUpForm
@@ -97,6 +111,7 @@ class AppointmentsView(TemplateView):
         user_appointments = Appointment.objects.filter(user=self.request.user)
         context['user_appointments'] = user_appointments
         return context
+    
 
 class CustomLogoutView(LogoutView):
     def get_next_page(self):
