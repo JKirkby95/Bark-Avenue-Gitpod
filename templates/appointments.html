@@ -16,14 +16,9 @@
                         <strong>Pet:</strong> {{ appointment.pet }}<br>
                         <strong>Groomer:</strong> {{ appointment.groomer }}<br>
                         <strong>Service:</strong> {{ appointment.service }}<br>
-                        <div style="display: inline;">
                             <a href="/edit-appointment/{{ appointment.id }}" class="btn btn-primary">Edit</a>
-                            <form method="post" action="{% url 'delete_appointment' appointment.id %}">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
+                            <a href="{% url 'delete_appointment' appointment.id %}" class="btn btn-danger delete-button" data-appointment-id="{{ appointment.id }}">Delete</a>
                         </div>
-                    </div>
                 </div>
             </div>
             {% endfor %}
@@ -31,4 +26,34 @@
     {% else %}
         <p class="text-center">No appointments found for the current user.</p>
     {% endif %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+      $('.delete-button').click(function(event) {
+          event.preventDefault(); // Prevent default anchor behavior
+
+          // Get the appointment ID from data attribute
+          var appointmentId = $(this).data('appointment-id');
+
+          // Send AJAX request to delete endpoint
+          $.ajax({
+              url: '/delete-appointment/' + appointmentId + '/', // Replace with your delete endpoint URL
+              type: 'POST', // Use POST method
+              data: {
+                  'csrfmiddlewaretoken': '{{ csrf_token }}' // Add CSRF token
+              },
+              success: function(response) {
+                  // Handle success response, if needed
+                  console.log('Appointment deleted successfully');
+                  // Refresh the page after deletion
+                  window.location.reload();
+              },
+              error: function(xhr, status, error) {
+                  // Handle error response, if needed
+                  console.error('Error deleting appointment:', error);
+              }
+          });
+      });
+  });
+  </script>
 {% endblock %}

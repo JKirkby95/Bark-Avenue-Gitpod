@@ -4,10 +4,12 @@
 
 {% block content %}
     <form method="post" onsubmit="displayAppointmentConfirmation()" class="mx-auto">
-        <h3 class="text-center">Book Appointment</h3>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="login-btn">Submit</button>
+        <div>
+            <h3 class="text-center">Book Appointment</h3>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="login-btn">Submit</button>
+        </div>
     </form>
 
     <script>

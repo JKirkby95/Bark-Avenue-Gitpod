@@ -3,15 +3,17 @@
 {% block title %}Home - Bark Avenue Groomers{% endblock %}
 
 {% block content %}
-<div class="jumbotron container text-center">
-    <div class="row justify-content-center">
-        <h1 class="display-4 col-8 col-md-6 ">Welcome to Bark Avenue Groomers!</h1>
-    </div>
-    <div class="row justify-content-center">
-        <p class="lead col-6 col-md-4">Book your pet's next grooming appointment with us.</p>
-    </div>
-    <div class="row justify-content-center">
-        <a class="btn btn-primary btn-lg" href="{% url 'booking' %}" role="button">Book Appointment</a>
+<div class="jumbotron container text-center mt-4 position-relative" style="background-image: url('/media/form-bg.png');">
+    <div class="jumbotron container text-center mt-4 position-relative" style="background-color: rgba(255, 255, 255, 0.9); width: 50%;">
+        <div class="row justify-content-center">
+            <h1 class="display-4 col-8 col-md-6">Welcome to Bark Avenue Groomers!</h1>
+        </div>
+        <div class="row justify-content-center">
+            <p class="lead col-6 col-md-4">Book your pet's next grooming appointment with us.</p>
+        </div>
+        <div class="row justify-content-center">
+            <a class="btn btn-primary btn-lg" href="{% url 'booking' %}" role="button">Book Appointment</a>
+        </div>
     </div>
 </div>
 {% endblock %}
