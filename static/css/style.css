@@ -28,5 +28,41 @@ body {
 h3 {
     margin-bottom: 10px;
 }
+/* Footer styling */
+.footer {
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa; 
+    padding: 20px 0; 
+    text-align: center; 
+}
 
+#facebook i:hover {
+    color: #3b5998;
+}
+#twitter i:hover {
+    color: #1DA1F2;
+}
+#youtube i:hover {
+    color: #FF0000;
+}
+#instagram i:hover {
+    color: salmon;
+}
+#social-networks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 150%;
+}
+
+#social-networks li {
+    display: inline-block;
+    margin-right: 10px; /* Adjust spacing between social icons */
+}
+
+#social-networks li:last-child {
+    margin-right: 0;
+}
 
