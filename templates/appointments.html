@@ -3,9 +3,9 @@
 {% block title %}Appointments - Bark Avenue Groomers{% endblock %}
 
 {% block content %}
-<h1 class="text-center">Appointments</h1>
+<h1 class="text-center" style="color: #f8f9fa; text-decoration: underline 1px solid #f8f9fa;">Appointments</h1>
     {% if user_appointments %}
-        <p class="text-center">Number of appointments: {{ user_appointments.count }}</p>
+        <p class="text-center" style="color: #f8f9fa;">Number of appointments: {{ user_appointments.count }}</p>
         <div class="row">
             {% for appointment in user_appointments %}
             <div class="col-md-6 mb-4">

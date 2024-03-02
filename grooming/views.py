@@ -35,7 +35,7 @@ class BookingView(TemplateView):
             appointment.user = request.user
             appointment.save()
             # Redirect to a success page or home page
-            return redirect('index')
+            return redirect('appointments')
         return render(request, self.template_name, {'form': form})
 
 class EditAppointmentView(TemplateView):
@@ -55,7 +55,7 @@ class EditAppointmentView(TemplateView):
         form = AppointmentForm(request.POST, instance=appointment)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('appointments')
         else:
             # Form is not valid, render the form again with errors
             return HttpResponseBadRequest("Form submission failed. Please check the form and try again.")
@@ -67,21 +67,22 @@ class DeleteAppointmentView(View):
         appointment.delete()
         return redirect('appointments')
 
+    
 
 class SignupView(FormView):
     template_name = 'signup.html'
     form_class = SignUpForm
-    success_url = '/login/'  # Redirect to login page after successful signup
+    success_url = '/login/'  # Redirect user to login page after successful signup
 
     def form_valid(self, form):
-        form.save()  # Save the user instance
+        form.save()  # Save the user 
         return super().form_valid(form)
 
 
 class LoginView(FormView):
     template_name = 'login.html'
     form_class = LoginForm
-    success_url = '/'  # Redirect to home page after successful login
+    success_url = '/'  # Redirect user to home page after successful login
 
     def form_valid(self, form):
         username = form.cleaned_data['username']
@@ -103,13 +104,16 @@ class AppointmentsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Retrieve the current user's appointments
+        # Retrieve the current users appointments
         user_appointments = Appointment.objects.filter(user=self.request.user)
         context['user_appointments'] = user_appointments
         return context
     
 
 class CustomLogoutView(LogoutView):
+    '''
+    Class for handling log out function
+    '''
     def get_next_page(self):
-        # Override the default behavior to redirect to the home screen
+        # Return user to home screen when logged out
         return reverse_lazy('index')
