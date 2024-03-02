@@ -17,6 +17,12 @@ class IndexView(TemplateView):
     '''
     template_name = 'index.html'
 
+class PriceView(TemplateView):
+    ''' 
+    Class for Home page view
+    '''
+    template_name = 'pricing.html'
+
 class BookingView(TemplateView):
     template_name = 'booking.html'
 

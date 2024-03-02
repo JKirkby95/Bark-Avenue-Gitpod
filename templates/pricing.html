@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %} Pricing {% endblock %}
+
+{% block content %}
+<section class="pricing py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Wash -->
+            <div class="col-lg-4">
+                <div class="card mb-5 mb-lg-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted text-uppercase text-center">Wash</h5>
+                        <h6 class="card-price text-center">€20</h6>
+                        <hr>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Shampoo</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Conditioner</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Blowdry</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Complimentary bandana</li>
+                            <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Hair Cut</li>
+                            <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>De-matting
+                            </li>
+                            <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Ear Clean</li>
+                            <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Nails</li>
+                        </ul>
+                        <div class="d-grid">
+                            <a class="btn btn-primary btn-lg" href="{% url 'booking' %}" role="button">Book
+                                Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Plus Tier -->
+            <div class="col-lg-4">
+                <div class="card mb-5 mb-lg-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted text-uppercase text-center">Wash and cut</h5>
+                        <h6 class="card-price text-center">€35</h6>
+                        <hr>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Shampoo</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Conditioner</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Blowdry</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Complimentary bandana</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Hair Cut</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>De-mating</li>
+                            <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Ear Clean</li>
+                            <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Nails</li>
+                        </ul>
+                        <div class="d-grid">
+                            <a class="btn btn-primary btn-lg" href="{% url 'booking' %}" role="button">Book
+                                Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pro Tier -->
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted text-uppercase text-center">The Works</h5>
+                        <h6 class="card-price text-center">€50</h6>
+                        <hr>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Shampoo</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Conditioner</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Blowdry</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Complimentary bandana</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Hair Cut</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>De-mating</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Ear Clean</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Nails</li>
+                        </ul>
+                        <div class="d-grid">
+                            <a class="btn btn-primary btn-lg" href="{% url 'booking' %}" role="button">Book
+                                Appointment</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
