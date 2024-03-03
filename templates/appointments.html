@@ -10,7 +10,7 @@
     <!-- display all users appointments using a for loop -->
     {% for appointment in user_appointments %}
     <div class="col-md-6 mb-4">
-        <div class="card appointment-card bg-image" style="background-image: url('/media/paws.png');">
+        <div class="card appointment-card bg-image" style="background-image: url('{{ MEDIA_URL }}paws.png');">
             <div class="card-body">
                 <strong>Date:</strong> {{ appointment.appointment_date }}<br>
                 <strong>Time:</strong> {{ appointment.appointment_time }}<br>
