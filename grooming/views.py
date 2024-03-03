@@ -114,8 +114,8 @@ class AppointmentsView(TemplateView):
         user_appointments = Appointment.objects.filter(user=self.request.user)
         context['user_appointments'] = user_appointments
         return context
-    
 
+    
 class CustomLogoutView(LogoutView):
     '''
     Class for handling log out function
