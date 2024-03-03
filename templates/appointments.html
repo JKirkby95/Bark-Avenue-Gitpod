@@ -7,6 +7,7 @@
 {% if user_appointments %}
 <p class="text-center" style="color: #f8f9fa;">Number of appointments: {{ user_appointments.count }}</p>
 <div class="row">
+    <!-- display all users appointments using a for loop -->
     {% for appointment in user_appointments %}
     <div class="col-md-6 mb-4">
         <div class="card appointment-card bg-image" style="background-image: url('/media/paws.png');">
@@ -25,10 +26,11 @@
     {% endfor %}
 </div>
 {% else %}
+<!-- if user has no appointments display this -->
 <p class="text-center">No appointments found for the current user.</p>
 {% endif %}
 
-<!-- Modal -->
+<!-- Modal to confirm deletion fo an appointment -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -49,12 +51,13 @@
         </div>
     </div>
 </div>
-
+<!-- import jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- script for deleting appointments from database -->
 <script>
     $(document).ready(function () {
         $('.delete-button').click(function (event) {
-            event.preventDefault(); // Prevent default anchor behavior
+            event.preventDefault();
 
             // Get the appointment ID from data attribute
             var appointmentId = $(this).data('appointment-id');
@@ -70,8 +73,8 @@
 
             // Send AJAX request to delete endpoint
             $.ajax({
-                url: '/delete-appointment/' + appointmentId + '/', // Replace with your delete endpoint URL
-                type: 'POST', // Use POST method
+                url: '/delete-appointment/' + appointmentId + '/', 
+                type: 'POST', 
                 data: {
                     'csrfmiddlewaretoken': '{{ csrf_token }}' // Add CSRF token
                 },

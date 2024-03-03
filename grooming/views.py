@@ -19,21 +19,24 @@ class IndexView(TemplateView):
 
 class PriceView(TemplateView):
     ''' 
-    Class for Home page view
+    Class for prices page view
     '''
     template_name = 'pricing.html'
 
 class BookingView(TemplateView):
+    ''' 
+    Class for appointment booking page view
+    '''
     template_name = 'booking.html'
-
+    # login required for this page
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
-
+    # render the booking form from forms.py 
     def get(self, request):
         form = AppointmentForm()
         return render(request, self.template_name, {'form': form})
-
+    # redirecting the user after the form is completed
     def post(self, request):
         form = AppointmentForm(request.POST)
         if form.is_valid():
@@ -45,17 +48,20 @@ class BookingView(TemplateView):
         return render(request, self.template_name, {'form': form})
 
 class EditAppointmentView(TemplateView):
+    '''
+    class for editing the appointments
+    '''
     template_name = 'edit_appointment.html'
-
+    # login required for this page
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
-
+    # getting the appointment id
     def get(self, request, appointment_id):
         appointment = get_object_or_404(Appointment, id=appointment_id)
         form = AppointmentForm(instance=appointment)
         return render(request, self.template_name, {'form': form, 'appointment_id': appointment_id})
-
+    # saving the new appointment details and redirecting user
     def post(self, request, appointment_id):
         appointment = get_object_or_404(Appointment, id=appointment_id)
         form = AppointmentForm(request.POST, instance=appointment)
@@ -68,36 +74,51 @@ class EditAppointmentView(TemplateView):
 
 
 class DeleteAppointmentView(View):
+    '''
+    getting the appointment id to delete
+    '''
     def post(self, request, appointment_id):
         appointment = get_object_or_404(Appointment, id=appointment_id)
         appointment.delete()
         return redirect('appointments')
 
     
-
 class SignupView(FormView):
+    '''
+    class for the sign up page
+    '''
     template_name = 'signup.html'
+    # render the sign up form from forms.py
     form_class = SignUpForm
-    success_url = '/login/'  # Redirect user to login page after successful signup
+    # Redirect user to login page after successful signup
+    success_url = '/login/'
 
     def form_valid(self, form):
-        form.save()  # Save the user 
+        # Save the user for login
+        form.save()  
         return super().form_valid(form)
 
 
 class LoginView(FormView):
+    ''' 
+    class for login page view
+    '''
     template_name = 'login.html'
+    # render login form from forms.py
     form_class = LoginForm
-    success_url = '/'  # Redirect user to home page after successful login
+    # Redirect user to home page after successful login
+    success_url = '/'
 
     def form_valid(self, form):
+          # Authenticating the login details
         username = form.cleaned_data['username']
         password = form.cleaned_data['password']
-        user = authenticate(username=username, password=password)  # Authenticate with username
+        user = authenticate(username=username, password=password)
         if user is not None:
             login(self.request, user)
             return redirect(self.get_success_url())
         else:
+            # error message for incorrect login details
             messages.error(self.request, 'Invalid username or password')
             return super().form_invalid(form)
 

@@ -1,142 +1,156 @@
+/* css for all forms */
 form {
-    width: 80%;
-    background-color: #fff;
-    padding: 50px;
-    border-radius: 20px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
-
-body {
-    background: linear-gradient(90deg, rgba(120, 180, 255, 1) 0%, rgba(50, 150, 200, 1) 35%, rgba(0, 212, 255, 0.7) 100%);
-}
-/* Hero section styling */
-.jumbotron-container {
-  max-width: 80%; 
-  margin: 0 auto;
-}
-.login-btn {
-    width: 100%;
-    border: none;
-    border-radius: 50px;
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 150, 200, 1)35%, rgba(0, 212, 255, 1)100%);
+  width: 80%;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .form-control {
-    color: rgba(0, 0, 0, .8);
-    border-bottom-color: rgba(0, 0, 0, .4);
-    box-shadow: none !important;
-    border: none;
-    border-bottom: 1px solid;
-    border-radius: 4px 4px 0 0;
+  color: rgba(0, 0, 0, .8);
+  border-bottom-color: rgba(0, 0, 0, .4);
+  box-shadow: none !important;
+  border: none;
+  border-bottom: 1px solid;
+  border-radius: 4px 4px 0 0;
 }
+
+/* css for the body of the page */
+body {
+  background: linear-gradient(90deg, rgba(120, 180, 255, 1) 0%, rgba(50, 150, 200, 1) 35%, rgba(0, 212, 255, 0.7) 100%);
+}
+
+/* Hero section styling */
+.jumbotron-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/*  login button styling */
+.login-btn {
+  width: 100%;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 150, 200, 1)35%, rgba(0, 212, 255, 1)100%);
+}
+
 h3 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
+
 /* Footer styling */
 .footer {
-    position: fixed; 
-    bottom: 0;
-    width: 100%;
-    background-color: #f8f9fa; 
-    padding: 20px 0; 
-    text-align: center; 
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
 }
 
 #facebook i:hover {
-    color: #3b5998;
+  color: #3b5998;
 }
+
 #twitter i:hover {
-    color: #1DA1F2;
+  color: #1DA1F2;
 }
+
 #youtube i:hover {
-    color: #FF0000;
+  color: #FF0000;
 }
+
 #instagram i:hover {
-    color: salmon;
+  color: salmon;
 }
+
 #social-networks {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 150%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 150%;
 }
 
 #social-networks li {
-    display: inline-block;
-    margin-right: 10px; /* Adjust spacing between social icons */
+  display: inline-block;
+  margin-right: 10px;
+  /* Adjust spacing between social icons */
 }
 
 #social-networks li:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
+
 /* Pricing page styles */
 section.pricing {
-    background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+.pricing .card {
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.pricing hr {
+  margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+}
+
+.pricing .card-price {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.pricing .card-price .period {
+  font-size: 0.8rem;
+}
+
+.pricing ul li {
+  margin-bottom: 1rem;
+}
+
+.pricing .text-muted {
+  opacity: 0.7;
+}
+
+.pricing .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+  .pricing .card:hover {
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
   }
-  
-  .pricing .card {
-    border: none;
-    border-radius: 1rem;
-    transition: all 0.2s;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+
+  .pricing .card:hover .btn {
+    opacity: 1;
   }
-  
-  .pricing hr {
-    margin: 1.5rem 0;
+
+}
+
+@media (max-width: 992px) {
+  .tag-line {
+    display: none;
   }
-  
-  .pricing .card-title {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-    letter-spacing: .1rem;
-    font-weight: bold;
-  }
-  
-  .pricing .card-price {
-    font-size: 3rem;
-    margin: 0;
-  }
-  
-  .pricing .card-price .period {
-    font-size: 0.8rem;
-  }
-  
-  .pricing ul li {
-    margin-bottom: 1rem;
-  }
-  
-  .pricing .text-muted {
-    opacity: 0.7;
-  }
-  
-  .pricing .btn {
-    font-size: 80%;
-    border-radius: 5rem;
-    letter-spacing: .1rem;
-    font-weight: bold;
-    padding: 1rem;
-    opacity: 0.7;
-    transition: all 0.2s;
-  }
-  
-  /* Hover Effects on Card */
-  
-  @media (min-width: 992px) {
-    .pricing .card:hover {
-      margin-top: -.25rem;
-      margin-bottom: .25rem;
-      box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
-    }
-  
-    .pricing .card:hover .btn {
-      opacity: 1;
-    }
-   
-  }
-  @media (max-width: 992px) {
-    .tag-line {
-      display: none;
-    }
-  }
+}
