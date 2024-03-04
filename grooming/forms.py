@@ -105,7 +105,7 @@ class AppointmentForm(forms.ModelForm):
 
         return cleaned_data
 
-    # 
+    
     class Meta:
         model = Appointment
         fields = [
