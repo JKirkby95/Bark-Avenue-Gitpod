@@ -6,17 +6,32 @@
 {% block content %}
 <!-- hero section with call to action -->
 <div class="jumbotron container text-center mt-4 position-relative" style="background-image: url('{% static 'images/form-bg.png' %}');">
-    <div class="hero jumbotron container text-center mt-4 position-relative" style="background-color: rgba(255, 255, 255, 0.9); width: 50%;">
+    <div class="hero jumbotron container text-center mt-4 position-relative" style="background-color: rgba(255, 255, 255, 0.9); padding: 20px;">
         <div class="row justify-content-center">
-            <h1 class="col-8 col-md-6 col-sm-8">Welcome to Bark Avenue Groomers!</h1>
+            <div class="col-md-10 col-lg-8">
+                <h1 class="display-4">Welcome to Bark Avenue Groomers!</h1>
+            </div>
         </div>
         <div class="row justify-content-center">
-            <p class="tag-line">Book your pet's next grooming appointment with us.</p>
+            <div class="col-md-8 col-lg-6">
+                <p class="lead">Book your pet's next grooming appointment with us.</p>
+            </div>
         </div>
         <div class="row justify-content-center">
-            <a class="btn btn-primary btn-lg" href="{% url 'booking' %}" role="button">Book Appointment</a>
+            <div class="col-md-6 col-lg-4">
+                <a class="btn btn-primary btn-lg" href="{% url 'booking' %}" role="button">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap container for opening hours and contact info -->
+<div class="container mt-6 d-none d-sm-block"> <!-- Hide on extra small and small screens -->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p><strong>Opening Hours:</strong> 9:00 AM - 5:00 PM, Every Day</p>
+            <br>
+            <p><strong>Contact Info:</strong> Phone: 0871234567 | Email: <a href="mailto:barkavenue@dogmail.com" target="_blank" style="text-decoration: none; color: inherit;">barkavenue@dogmail.com</a></p>
         </div>
     </div>
 </div>
 {% endblock %}
-
