@@ -148,9 +148,13 @@ section.pricing {
   }
 
 }
-
 @media (max-width: 992px) {
   .tag-line {
     display: none;
+  }
+}
+@media (max-width:800px) {
+  .hero {
+    background-color: none;
   }
 }
