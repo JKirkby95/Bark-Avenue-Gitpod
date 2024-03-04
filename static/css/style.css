@@ -41,13 +41,13 @@ h3 {
 }
 
 /* Footer styling */
-.footer {
-  position: relative;
+footer {
+  height: 50px;
   width: 100%;
-  background-color: #f8f9fa;
-  padding: 20px 0;
-  text-align: center;
+  padding-top: 0;
+  overflow: hidden;
 }
+
 
 /* Social media icon styling */
 #facebook i:hover {
@@ -129,10 +129,4 @@ section.pricing {
     opacity: 1;
   }
 
-}
-/* Hide footer on screens smaller than 325px */
-@media (max-width: 325px) {
-  .footer {
-      display: none;
-  }
 }
