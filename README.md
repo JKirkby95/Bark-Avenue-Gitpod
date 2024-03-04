@@ -4,10 +4,11 @@
 
 I decided to create a booking site for Bark Avenue Grooming because I wanted to challenge myself and step out of my comfort zone. The walkthroughs we had in the course were a blog post and a simple to-do list, so I didn't want to completely replicate them. I did take elements from both, though; the blog post walkthrough was particularly helpful for setting up this project. However, I aimed for this site to be mostly my own. Interestingly, my mom actually runs a grooming business by the same name, so I leaned on her for help with some of the smaller details. In this README, I'll delve into the full process of creating this site and discuss possible features I may want to add in the future.
 
+View the deployed website [here]().
+
 ## Table of Contents
 
 1. [User Experience (UX)](#user-experience-ux)
-    1. [Strategy](#strategy)
         1. [Project Goals](#project-goals)
         2. [User Goals](#user-goals)
         3. [Goals Table](#goals-table)
@@ -39,8 +40,6 @@ I decided to create a booking site for Bark Avenue Grooming because I wanted to 
 9. [Acknowledgements](#acknowledgements)
 
 ## User Experience (UX)
-
-### Strategy
 
 #### Project Goals
 
