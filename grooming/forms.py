@@ -1,9 +1,10 @@
 from django import forms
 from .models import Appointment, Groomer
-from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
-from datetime import time , date
+from datetime import time, date
 from django.core.exceptions import ValidationError
+
 
 class SignUpForm(UserCreationForm):
     '''
@@ -20,13 +21,14 @@ class SignUpForm(UserCreationForm):
             'password1',
             'password2',
             ]
+
     # Clean and retrieve data from form field
     def clean(self):
         cleaned_data = super().clean()
         username = cleaned_data.get('username')
         password1 = cleaned_data.get('password1')
         password2 = cleaned_data.get('password2')
-        #Form validation
+        # Form validation
         if not username:
             raise forms.ValidationError("Username is required")
         if not password1:
@@ -36,11 +38,11 @@ class SignUpForm(UserCreationForm):
 
         return cleaned_data
 
-        
+
 class LoginForm(AuthenticationForm):
     '''
     Class for the login form checks username and password against the server
-    ''' 
+    '''
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
@@ -49,7 +51,7 @@ class LoginForm(AuthenticationForm):
         username = cleaned_data.get('username')
         password = cleaned_data.get('password')
 
-        #Formm Validation
+        # Form Validation
         if not username:
             raise forms.ValidationError("Username is required")
         if not password:
@@ -80,16 +82,16 @@ class AppointmentForm(forms.ModelForm):
         self.fields['appointment_time'].choices = time_slots
 
     def clean_appointment_date(self):
-        ''' 
+        '''
         validating the date on form
         '''
         appointment_date = self.cleaned_data.get('appointment_date')
-        if appointment_date is None:  # Check if appointment_date is empty
+        if appointment_date is None: # Check if appointment_date is empty
             raise forms.ValidationError("Appointment date is required.")
         if appointment_date < date.today():  # Check if the selected date is in the past
             raise forms.ValidationError("You cannot select a date in the past.")
         return appointment_date
-
+        
     def clean(self):
         ''' 
         checking if the groomer selected is available at that time
@@ -115,7 +117,7 @@ class AppointmentForm(forms.ModelForm):
             'groomer',
             'service',
             ]
-            # widgets for date and time
+        # widgets for date and time
         widgets = {
             'appointment_date' : forms.DateInput(
                 attrs={

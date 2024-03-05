@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Service(models.Model):
     '''
     class for the services provided
@@ -10,15 +11,16 @@ class Service(models.Model):
     def __str__(self):
         return self.name
 
+
 class Groomer(models.Model):
     '''
     class for the groomers available
     '''
     name = models.CharField(max_length=100)
     
-
     def __str__(self):
         return self.name
+
 
 class Appointment(models.Model):
     '''

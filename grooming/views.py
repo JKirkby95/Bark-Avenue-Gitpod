@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect , get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView, FormView, View
 from .forms import AppointmentForm, SignUpForm, LoginForm
 from django.contrib.auth import authenticate, login
@@ -17,11 +17,13 @@ class IndexView(TemplateView):
     '''
     template_name = 'index.html'
 
+
 class PriceView(TemplateView):
     ''' 
     Class for prices page view
     '''
     template_name = 'pricing.html'
+
 
 class BookingView(TemplateView):
     ''' 
@@ -33,10 +35,12 @@ class BookingView(TemplateView):
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
     # render the booking form from forms.py 
+
     def get(self, request):
         form = AppointmentForm()
         return render(request, self.template_name, {'form': form})
     # redirecting the user after the form is completed
+
     def post(self, request):
         form = AppointmentForm(request.POST)
         if form.is_valid():
@@ -47,20 +51,24 @@ class BookingView(TemplateView):
             return redirect('appointments')
         return render(request, self.template_name, {'form': form})
 
+
 class EditAppointmentView(TemplateView):
     '''
     class for editing the appointments
     '''
     template_name = 'edit_appointment.html'
     # login required for this page
+
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
+
     # getting the appointment id
     def get(self, request, appointment_id):
         appointment = get_object_or_404(Appointment, id=appointment_id)
         form = AppointmentForm(instance=appointment)
         return render(request, self.template_name, {'form': form, 'appointment_id': appointment_id})
+        
     # saving the new appointment details and redirecting user
     def post(self, request, appointment_id):
         appointment = get_object_or_404(Appointment, id=appointment_id)

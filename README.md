@@ -26,15 +26,16 @@ View the deployed website [here]().
     1. [Languages Used](#languages-used)
     2. [Libraries and Frameworks](#languages-and-frameworks)
     3. [Packages / Dependencies Installed](#packages--dependencies-installed)
-    4. [Database Management](#database-management)
-    5. [Tools and Programs](#tools-and-programs)
+    4. [Tools and Programs](#tools-and-programs)
 4. [Testing](#testing)
-    1. [Go to TESTING.md](https://github.com/josswe26/code-buddy/blob/main/TESTING.md#code-buddy-testing)
+    1. [Lighthouse](#Lighthouse)
+    2. [Code Validation](#Code-Validtion)
+    3. [Manual Testing](#Manual-testing)
+    4. [Bugs](#bugs)
 5. [Deployment](#deployment)
 6. [Finished Product](#finished-product)
 7. [Credits](#credits)
-8. [Known Bugs](#known-bugs)
-9. [Acknowledgements](#acknowledgements)
+8. [Acknowledgements](#acknowledgements)
 
 ## User Experience (UX)
 
@@ -150,6 +151,9 @@ Appointments | ![Appointments](media/appointments_wireframe.png) |
 ![Navbar](media/navbar3.png)
 ![Navbar](media/navbar4.png)
 
+[Back to top ⇧](#Bark-Avenue-Grooming)
+
+
 ***
 
 ### Call to action
@@ -226,7 +230,247 @@ Appointments | ![Appointments](media/appointments_wireframe.png) |
 
 - I used a tier based pricing I was really happy with how it turned out, it clearly shows what you get with each tier and also what you dont get.
 
-## 
+[Back to top ⇧](#Bark-Avenue-Grooming)
+
+***
+
+## Technologies Used
+
+### Languages Used
+
+-[HTML5](https://en.wikipedia.org/wiki/HTML)
+-[CSS3](https://en.wikipedia.org/wiki/CSS)
+-[JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+-[Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+***
+
+### Libraries and Frameworks
+
+-[Django](https://www.djangoproject.com/)   
+    -Django was used as web framework.
+
+-[Django Template](https://jinja.palletsprojects.com)  
+    -Django Template was used as a templating language for Django to display backend data to HTML.
+   
+-[Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)  
+    -Bootstrap 5 was used throughout the website to help with styling and responsiveness.
+
+-[Google Fonts](https://fonts.google.com)  
+    -Google fonts were used to import the fonts into the html file and were used on all parts of the site.
+
+-[Font Awesome](https://fontawesome.com)  
+    -Font Awesome was used throughout the website to add icons for aesthetic and UX purposes. 
+
+***
+
+[Back to top ⇧](#Bark-Avenue-Grooming)
+
+### Packages / Dependencies Installed
+
+-[Django Allauth](https://django-allauth.readthedocs.io/en/latest/)  
+    -Django Allauth was used for user authentication, registration, and account management.
+
+-[Gunicorn](https://gunicorn.org/)  
+    -Gunicorn was used as Python WSGI HTTP Server for UNIX to support the deployment of Django application.
+
+-[Cloudinary](https://cloudinary.com/)
+    -Cloudinary has been used as image management solution.
+
+***
+
+### Tools and Programs
+
+-[GitPod](https://gitpod.io/)
+     -GitPod was used for writing code, committing, and then pushing to GitHub.
+
+-[GitHub](https://github.com)  
+   GitHub was used to store the project's code after being pushed from Git. 
+
+-[Heroku](https://www.heroku.com)   
+    -Heroku was used to deploy the website.
+
+-[Elephantsql](https://www.elephantsql.com)
+    -Elephantsql was used to help host the Postgres database with Heroku.
+
+-[Am I Responsive](ami.responsivedesign.is)  
+    -Am I Responsive was used to preview the website across a variety of popular devices.
+
+-[Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+    -Chrome DevTools was used during development process for code review and to test responsiveness.
+
+-[W3C Markup Validator](https://validator.w3.org/)
+    -W3C Markup Validator was used to validate the HTML code.
+
+-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+    -W3C CSS Validator was used to validate the CSS code.
+
+-[JSHint](https://jshint.com/) 
+    -The JSHints JavaScript Code Quality Tool was used to validate the site's JavaScript code.
+
+-[Figma](https://www.figma.com)
+    -Figma was used to make my wireframes.
+
+[Back to top ⇧](#Bark-Avenue-Grooming)
+
+***
+
+## Testing
+
+### Lighthouse
+
+*** 
+
+### Home Page
+
+![home lighthouse](media/balighthouse.png)
+
+### Booking Page
+
+![booking lighthouse](media/lighthousebooking.png)
+
+### Appointments Page
+
+![appointments lighthouse](media/lighthouseappointments.png)
+
+### Pricing Page
+
+![pricing lighthouse](media/lighthousepricing.png)
+
+### Login Page
+
+![login lighthouse](media/lighthhouselogin.png)
+
+### Signup Page
+
+![signup lighthouse](media/lighthousesignup.png)
+
+***
+
+### Code Validtion
+
+### HTML
+
+![Code validation](media/validationindex.png)
+
+- All HTML pages were validated using [W3C Markup Validator](https://validator.w3.org/).
+
+***
+
+### CSS
+
+![Css validation](media/validationcss.png)
+
+- My CSS was validated using [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+### Javascript
+
+![Javascript validation](media/jshint.png)
+
+- My Javascript was validated using [JSHint](https://jshint.com/).
+
+***
+
+### Python 
+
+![Python Validation](media/pep8.png)
+
+- The PEP8 tool provided by Code Institute was used to validate my python link to which is [here.](https://pep8ci.herokuapp.com/)
+
+- The only errors I got from that was line too long and some trailing white spaces which don't affect the functionality of the python code.
+
+***
+
+### Manual Testing
+
+**Browser Compatibility**
+
+Browser | Outcome | Pass/Fail  
+--- | --- | ---
+Google Chrome | No appearance, responsiveness or functionality issues.| Pass
+Safari | No appearance, responsiveness or functionality issues. | Pass
+Brave | No appearance, responsiveness or functionality issues. | Pass
+Microsoft Edge | No appearance, responsiveness or functionality issues. | Pass
+
+**Device compatibility**
+
+Device | Outcome | Pass/Fail
+--- | --- | ---
+HP Pavillion 14" display | No appearance, responsiveness or functionality issues. | Pass
+Custom Home PC with 28" display  | No appearance, responsiveness or functionality issues. | Pass
+MSI Katana GF66 11UE | No appearance, responsiveness or functionality issues. | Pass
+Iphone 14 Pro | No appearance, responsiveness or functionality issues. | Pass
+Nothing Phone (1) | No appearance, responsiveness or functionality issues. | Pass
+One Plus 8T| No appearance, responsiveness or functionality issues. | Pass
+
+**Common Elements Testing**
+
+- General
+
+    Feature | Outcome | Pass/Fail
+    --- | --- | ---
+    Nav links |  Links are working as expected. | Pass
+    Home booking button| Working as expected. | Pass
+    Social Links | Open the specific website on a new tab. | Pass
+    Booking form | Appears as expected and sends correct data to the database. | Pass
+    Appointments Card | Showing all data and allowing editing and deletion. | Pass
+    Login | Working as expected. | Pass
+    Sign up | Working as expected. | Pass
+    Sign out | Working as expected. | Pass
+
+###  Bugs
+
+- I have dealt with lot's of bugs in the process of making this site.
+
+- The biggest of which was actually the delete button, I spent around 2 days trying to get this to function correctly.
+
+- At first it actually worked well but as it was technically a form it inherited the styling from all the other forms on the site. 
+It had too much padding and I couldn't find a way to remove it.
+
+- I thought I had a solution to this at one stage but I was then getting errors with post and get requests.
+
+- It took a lot of online research but I ended up finding something very similar on a reddit page of all places.
+    
+[Back to top ⇧](#Bark-Avenue-Grooming)
+
+***
+
+## Deployment
+
+To deploy this page to Heroku from its GitHub repository, the following steps were taken:
+
+1. Create the Heroku App:
+    * Select "Create new app" in Heroku.
+    * Choose a name for your app and select the location.
+
+2. Prepare the environment and settings.py file:
+    * In the Settings tab, click on Reveal Config Vars and copy the url next to DATABASE_URL.
+    * In your GitPod workspace, create an env.py file in the main directory. 
+    * Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
+    * Add the SECRET_KEY value to the Config Vars in Heroku.
+    * Update the settings.py file to import the env file and add the SECRETKEY and DATABASE_URL file paths.
+    * Update the Config Vars with the Cloudinary url, adding into the settings.py file also.
+    * In settings.py add the following sections:
+        * Cloudinary to the INSTALLED_APPS list
+        * STATICFILE_STORAGE
+        * STATICFILES_DIRS
+        * STATIC_ROOT
+        * MEDIA_URL
+        * DEFAULT_FILE_STORAGE
+        * TEMPLATES_DIR
+        * Update DIRS in TEMPLATES with TEMPLATES_DIR
+        * Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+
+3. Store Static and Media files in Cloudinary and Deploy to Heroku:
+    * Create three directories in the main directory; media, static and templates.
+    * Create a file named "Procfile" in the main directory and add the following:
+        * web: gunicorn project-name.wsgi
+    * Go to the Deploy tab on Heroku and connect to GitHub, then to the required repository.
+    Click on the Deploy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku.
+
+[Back to top ⇧](#Bark-Avenue-Grooming)
+
+
 
 
 
