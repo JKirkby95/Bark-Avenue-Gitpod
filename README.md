@@ -18,9 +18,10 @@ View the deployed website [here]().
 2. [Features](#features)
     1. [General](#general)
     2. [Home Page](#home-page)
-    3. [Profile](#profile)
-    4. [Our Houses](#our-houses)
-    5. [Admin](#admin)
+    3. [Booking](#booking-page)
+    4. [Appointments](#Appointments)
+    5. [login](#login)
+    6. [pricing](#pricing)
 3. [Technologies Used](#technologies-used)
     1. [Languages Used](#languages-used)
     2. [Libraries and Frameworks](#languages-and-frameworks)
@@ -51,6 +52,8 @@ View the deployed website [here]().
 
 - A page to view , edit and delete appointments. (CRUD)
 
+***
+
 #### User Goals
 
 - As an Admin, I want to manage the site content.
@@ -62,6 +65,8 @@ View the deployed website [here]().
 - As a User, I want to be able to view , edit and delete my appointments.
 
 - As a User, I want to see the prices of the available services.
+
+***
 
 #### Goals Table
 
@@ -75,6 +80,8 @@ Contact details / social links | Yes |
 View prices | Yes |
 Have a responsive design |  Yes |
 
+***
+
 ### Color Scheme
 
 ![website color scheme](media/color.png)
@@ -82,6 +89,8 @@ Have a responsive design |  Yes |
 For my previous web pages I had something to take the color from that had to do with the theme.
 This time there's no history involved I tried to keep it simple Black and White with a splash of Color.
 And I chose the light blue as the splash because it's my mom's favourite color and she inspired this site.
+
+***
 
 ### Wireframes
 
@@ -96,6 +105,8 @@ Login / Logout | ![Login / Logout](media/login_wireframe.png) |
 Appointments | ![Appointments](media/appointments_wireframe.png) |
 
 [Back to top ⇧](#Bark-Avenue-Grooming)
+
+***
 
 ### User Stories
 
@@ -149,13 +160,75 @@ Appointments | ![Appointments](media/appointments_wireframe.png) |
 
 - I added the background image to make the home page seem a bit more fun and add some life to it.
 
+***
+
 ### Footer
 
 ![Footer](media/footer.png)
 
 - The footer of this site just contains the social media links, when the user hovers over said icon it changes color to a color associated with that site.
 
+***
+
 ### Home Page
+
+![home page](media/bahomepage.png)
+
+- The main goal of my home page is to tell the customer what we are about and give them an easy way to make a booking.
+
+- I also added the contact details here in case some users just want the phone number and don't want to sign in.
+
+***
+
+### Booking Page
+
+![booking page](media/babookingpage.png)
+
+- My booking page contains a form I made with bootstrap, I wanted it to be a simple form that's responsive.
+
+- Once the form is completed it sends the user to the appointments page.
+
+***
+
+### Appointments
+
+![Appointments](media/baappointmentspage.png)
+
+- My appointments page contains cards with the appointment details on it.
+
+- The cards also contain an edit and delete buttons and a background design.
+
+***
+
+### Login 
+
+![Login](media/baloginpage.png)
+
+- My login page is again very simple , but serves my goal of being responsive and straight to the point.
+
+***
+
+![signup](media/basignuppage.png)
+
+- My sign up page is very similar but with a few slight changes.
+
+- It asks for the password twice to confirm.
+
+- And it has a link to the log in page for already signed up users.
+
+***
+
+### Pricing 
+
+![pricing](media/bapricingpage.png)
+
+- My pricing page was again designed using bootstrap to help with responsiveness and ease of design.
+
+- I used a tier based pricing I was really happy with how it turned out, it clearly shows what you get with each tier and also what you dont get.
+
+## 
+
+
 
 
 
