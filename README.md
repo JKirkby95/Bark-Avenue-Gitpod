@@ -14,6 +14,7 @@ View the deployed website [here]().
     3. [Goals Table](#goals-table)
     4. [Color Scheme](#color-Scheme)
     5. [Wireframes](#wireframes)
+    6. [User Stories](#user-stories)
 2. [Features](#features)
     1. [General](#general)
     2. [Home Page](#home-page)
@@ -96,6 +97,30 @@ Appointments | ![Appointments](media/appointments_wireframe.png) |
 
 [Back to top ⇧](#Bark-Avenue-Grooming)
 
+### User Stories
+
+- Github projects was used to track my user stories, I found this as a helpful way of tracking my own progress.
+
+- Stage 1
+
+![Stage1](media/stage1.png)
+
+- Stage 2
+
+![Stage2](media/stage2.png)
+
+- Stage 3
+
+![Stage3](media/stage3.png)
+
+- Stage 4
+
+![Stage4](media/stage4.png)
+
+- Stage 5
+
+![Stage5](media/stage5.png)
+
 ## Features
 
 ### General
@@ -114,6 +139,8 @@ Appointments | ![Appointments](media/appointments_wireframe.png) |
 ![Navbar](media/navbar3.png)
 ![Navbar](media/navbar4.png)
 
+***
+
 ### Call to action
 
 ![Call to action ](media/calltoaction.png)
@@ -128,7 +155,7 @@ Appointments | ![Appointments](media/appointments_wireframe.png) |
 
 - The footer of this site just contains the social media links, when the user hovers over said icon it changes color to a color associated with that site.
 
-
+### Home Page
 
 
 
