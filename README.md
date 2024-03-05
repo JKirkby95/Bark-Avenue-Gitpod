@@ -14,7 +14,6 @@ View the deployed website [here]().
     3. [Goals Table](#goals-table)
     4. [Color Scheme](#color-Scheme)
     5. [Wireframes](#wireframes)
-    2. [Scope](#scope)
 2. [Features](#features)
     1. [General](#general)
     2. [Home Page](#home-page)
@@ -96,4 +95,44 @@ Login / Logout | ![Login / Logout](media/login_wireframe.png) |
 Appointments | ![Appointments](media/appointments_wireframe.png) |
 
 [Back to top ⇧](#Bark-Avenue-Grooming)
+
+## Features
+
+### General
+
+### Navbar
+
+![Navbar](media/navbar.png)
+![Navbar](media/navbar2.png)
+
+- I used a simple navbar for this project just basic white background with simple text and the companys logo.
+
+- I mostly just wanted the navbar to be responsive at all screen sizes.
+
+- So I used Bootstrap to make this navbar, at smaller screens it turns the links into a hamburger icon for ease of use and a cleaner design.
+
+![Navbar](media/navbar3.png)
+![Navbar](media/navbar4.png)
+
+### Call to action
+
+![Call to action ](media/calltoaction.png)
+
+- Again the design for this is pretty simple, it has a clear function. It tells the user the name of the company and gives them a button to where they can go straight to the booking form.
+
+- I added the background image to make the home page seem a bit more fun and add some life to it.
+
+### Footer
+
+![Footer](media/footer.png)
+
+- The footer of this site just contains the social media links, when the user hovers over said icon it changes color to a color associated with that site.
+
+
+
+
+
+
+
+
 
