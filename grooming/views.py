@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LogoutView
 from django.utils.decorators import method_decorator
-from django.http import HttpResponseNotAllowed, HttpResponseBadRequest
+from django.http import HttpResponseNotAllowed, HttpResponseForbidden
 
 
 class IndexView(TemplateView):
@@ -67,19 +67,27 @@ class EditAppointmentView(TemplateView):
     # getting the appointment id
     def get(self, request, appointment_id):
         appointment = get_object_or_404(Appointment, id=appointment_id)
+        # Check if the user is the owner of the appointment
+        if appointment.user != request.user:
+            return redirect('userauth')  # Redirect to custom permission denied page
         form = AppointmentForm(instance=appointment)
         return render(request, self.template_name, {'form': form, 'appointment_id': appointment_id})
         
     # saving the new appointment details and redirecting user
     def post(self, request, appointment_id):
         appointment = get_object_or_404(Appointment, id=appointment_id)
+        # Check if the user is the owner of the appointment
+        if appointment.user != request.user:
+            return redirect('userauth')  # Redirect to custom permission denied page
         form = AppointmentForm(request.POST, instance=appointment)
         if form.is_valid():
             form.save()
             return redirect('appointments')
         else:
             # Form is not valid, render the form again with errors
+            form = AppointmentForm(instance=appointment)
             return render(request, self.template_name, {'form': form, 'appointment_id': appointment_id})
+
 
 
 class DeleteAppointmentView(View):
@@ -156,4 +164,10 @@ class CustomLogoutView(LogoutView):
     def get_next_page(self):
         # Return user to home screen when logged out
         return reverse_lazy('index')
+
+class UserauthView(TemplateView):
+    '''
+    Class for protecting user appointments
+    '''
+    template_name = 'userauth.html'
 

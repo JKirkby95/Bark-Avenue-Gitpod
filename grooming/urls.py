@@ -14,7 +14,8 @@ urlpatterns = [
     path('appointments/', views.AppointmentsView.as_view(), name='appointments'),
     path('pricing/', views.PriceView.as_view(), name='pricing'),
     path('edit-appointment/<int:appointment_id>/', views.EditAppointmentView.as_view(), name='edit_appointment'),
-    path('delete-appointment/<int:appointment_id>/', views.DeleteAppointmentView.as_view(), name='delete_appointment'), 
+    path('delete-appointment/<int:appointment_id>/', views.DeleteAppointmentView.as_view(), name='delete_appointment'),
+    path('userauth/', views.UserauthView.as_view(), name='userauth'),
 ]
 
 if settings.DEBUG:
