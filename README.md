@@ -373,11 +373,10 @@ Appointments | ![Appointments](media/appointments_wireframe.png) |
 
 ### Python 
 
-![Python Validation](media/pep8.png)
+![Python Validation](media/pep8new.png)
 
 - The PEP8 tool provided by Code Institute was used to validate my python link to which is [here.](https://pep8ci.herokuapp.com/)
 
-- The only errors I got from that was line too long and some trailing white spaces which don't affect the functionality of the python code.
 
 ***
 
@@ -410,13 +409,16 @@ One Plus 8T| No appearance, responsiveness or functionality issues. | Pass
     Feature | Outcome | Pass/Fail
     --- | --- | ---
     Nav links |  Links are working as expected. | Pass
-    Home booking button| Working as expected. | Pass
+    Home booking button| Opens booking form as expected | Pass
+    Booking links in pricing page | Opens booking form as expected | Pass
     Social Links | Open the specific website on a new tab. | Pass
     Booking form | Appears as expected and sends correct data to the database. | Pass
     Appointments Card | Showing all data and allowing editing and deletion. | Pass
-    Login | Working as expected. | Pass
-    Sign up | Working as expected. | Pass
-    Sign out | Working as expected. | Pass
+    Login | Working as expected, login features being shown to user | Pass
+    Sign up | Working as expected, and redirects user to login page | Pass
+    Sign out | Working as expected, hides features for logged in users| Pass
+    Appointment security | Working as expected, prevents other users from editing appointments not created by them. | Pass
+    
 
 ###  Bugs
 
@@ -430,6 +432,8 @@ It had too much padding and I couldn't find a way to remove it.
 - I thought I had a solution to this at one stage but I was then getting errors with post and get requests.
 
 - It took a lot of online research but I ended up finding something very similar on a reddit page of all places.
+
+- Even in the end I believe all these issues caused the problem with the appointment deleted successfully button, I had to use an alert which I'm not happy about.
     
 [Back to top ⇧](#Bark-Avenue-Grooming)
 
@@ -469,6 +473,19 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
     Click on the Deploy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku.
 
 [Back to top ⇧](#Bark-Avenue-Grooming)
+
+## Finished Product
+
+| Page        | Desktop         | Mobile |
+|-------------|------------------|------------------|
+| Home        | ![home page](media/bahomepage.png) | ![home page](media/mobilehome.png) |
+| Booking     | ![booking page](media/babookingpage.png) | ![booking page](media/mobilebooking.png)   |
+| Pricing     | ![pricing page](media/bapricingpage.png) | ![pricing page](media/mobilepricing.png)   |
+| Appointments| ![appointments page](media/baappointmentspage.png)|  ![appointments page](media/mobileappointments.png)  |
+| Login       | ![login page](media/baloginpage.png) | ![login page](media/mobilelogin.png)    |
+| Sign Up     | ![sign up page](media/basignuppage.png) |  ![sign up page](media/mobilesignup.png)   |
+
+
 
 
 

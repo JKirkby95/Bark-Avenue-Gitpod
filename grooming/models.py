@@ -17,7 +17,7 @@ class Groomer(models.Model):
     class for the groomers available
     '''
     name = models.CharField(max_length=100)
-    
+
     def __str__(self):
         return self.name
 
@@ -34,4 +34,4 @@ class Appointment(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Appointment for {self.pet} on {self.appointment_date}" 
+        return f"Appointment for {self.pet} on {self.appointment_date}"
