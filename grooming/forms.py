@@ -2,7 +2,7 @@ from django import forms
 from .models import Appointment, Groomer
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
-from datetime import time, date
+from datetime import time, date, datetime
 from django.core.exceptions import ValidationError
 
 
@@ -91,22 +91,29 @@ class AppointmentForm(forms.ModelForm):
         if appointment_date < date.today():  # Check if the selected date is in the past
             raise forms.ValidationError("You cannot select a date in the past.")
         return appointment_date
-        
+
     def clean(self):
         ''' 
-        checking if the groomer selected is available at that time
+        checking if the groomer selected is available at that time and date
         '''
         cleaned_data = super().clean()
         appointment_time = cleaned_data.get('appointment_time')
+        appointment_date = cleaned_data.get('appointment_date')
         groomer = cleaned_data.get('groomer')
-        # checking the selected groomer in the form
-        if groomer:
-            groomer_name = groomer.name  # get groomer name for alert
-            if Appointment.objects.filter(groomer=groomer, appointment_time=appointment_time).exists():
-                raise ValidationError(f"{groomer_name} is already booked at the selected time.")
 
+        if groomer and appointment_date and appointment_time:
+            groomer_name = groomer.name
+            # Convert appointment time string to datetime.time object
+            appointment_hour, appointment_minute = map(int, appointment_time.split(':'))
+            appointment_time_obj = time(hour=appointment_hour, minute=appointment_minute)
+            # Combine date and time to create datetime object
+            appointment_datetime = datetime.combine(appointment_date, appointment_time_obj)
+            
+            # Check if any appointment overlaps with the selected datetime
+            if Appointment.objects.filter(groomer=groomer, appointment_date=appointment_date, appointment_time=appointment_time_obj).exists():
+                raise ValidationError(f"{groomer_name} is already booked at the selected time and date.")
+        
         return cleaned_data
-
     
     class Meta:
         model = Appointment

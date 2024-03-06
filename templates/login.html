@@ -10,6 +10,8 @@
         <!-- render login form -->
         {{ form.as_p }}
         <button type="submit" class="login-btn">Login</button>
+         <!--  link to sign up if user doesnt have an account  -->
+        <p>Don't have an account? <a href="{% url 'signup' %}">Sign-Up</a></p>
     </form>
 </div>
 {% endblock %}

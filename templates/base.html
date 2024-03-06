@@ -27,16 +27,16 @@
                     <a class="nav-link" href="{% url 'index' %}">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'pricing'  %}">Pricing</a>
+                </li>
+                {% if user.is_authenticated %}
+                <!-- Display logout option if user is authenticated -->
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'booking' %}">Book Appointment</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'appointments' %}">Appointments</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'pricing'  %}">Pricing</a>
-                </li>
-                {% if user.is_authenticated %}
-                <!-- Display logout option if user is authenticated -->
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                 </li>
@@ -108,7 +108,7 @@
     <!-- Link to Fontawesome -->
     <script src="https://kit.fontawesome.com/8b7d50bbeb.js" crossorigin="anonymous"></script>
     <script>
-        // Function to dismiss messages after a specified time (in milliseconds)
+        // Function to dismiss messages after 3 seconds
         function dismissMessages() {
             var alerts = document.querySelectorAll('.alert');
             alerts.forEach(function(alert) {
@@ -116,11 +116,11 @@
                     alert.classList.add('fade');
                     setTimeout(function() {
                         alert.remove();
-                    }, 1000); // Adjust this timeout to match the fade transition duration
-                }, 3000); // 3000 milliseconds = 3 seconds
+                    }, 1000); // fade effect on message
+                }, 3000); //  3 seconds timer
             });
         }
-        // Call the function to dismiss messages after 3 seconds
+        // Call the function 
         dismissMessages();
     </script>
 </body>

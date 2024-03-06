@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LogoutView
 from django.utils.decorators import method_decorator
-from django.http import HttpResponseNotAllowed
+from django.http import HttpResponseNotAllowed, HttpResponseBadRequest
 
 
 class IndexView(TemplateView):
@@ -79,7 +79,7 @@ class EditAppointmentView(TemplateView):
             return redirect('appointments')
         else:
             # Form is not valid, render the form again with errors
-            return HttpResponseBadRequest("Form submission failed. Please check the form and try again.")
+            return render(request, self.template_name, {'form': form, 'appointment_id': appointment_id})
 
 
 class DeleteAppointmentView(View):
