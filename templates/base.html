@@ -107,6 +107,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Link to Fontawesome -->
     <script src="https://kit.fontawesome.com/8b7d50bbeb.js" crossorigin="anonymous"></script>
+    <script>
+        // Function to dismiss messages after a specified time (in milliseconds)
+        function dismissMessages() {
+            var alerts = document.querySelectorAll('.alert');
+            alerts.forEach(function(alert) {
+                setTimeout(function() {
+                    alert.classList.add('fade');
+                    setTimeout(function() {
+                        alert.remove();
+                    }, 1000); // Adjust this timeout to match the fade transition duration
+                }, 3000); // 3000 milliseconds = 3 seconds
+            });
+        }
+        // Call the function to dismiss messages after 3 seconds
+        dismissMessages();
+    </script>
 </body>
 
 </html>

@@ -47,6 +47,7 @@ class BookingView(TemplateView):
             appointment = form.save(commit=False)
             appointment.user = request.user
             appointment.save()
+            messages.success(request, 'Appointment booking confirmed. See appointment details below.')
             # Redirect to a success page or home page
             return redirect('appointments')
         return render(request, self.template_name, {'form': form})
@@ -155,3 +156,4 @@ class CustomLogoutView(LogoutView):
     def get_next_page(self):
         # Return user to home screen when logged out
         return reverse_lazy('index')
+
