@@ -88,6 +88,7 @@ class DeleteAppointmentView(View):
     def post(self, request, appointment_id):
         appointment = get_object_or_404(Appointment, id=appointment_id)
         appointment.delete()
+        messages.success(request, 'Appointment deleted successfully.')
         return redirect('appointments')
 
     
@@ -103,7 +104,8 @@ class SignupView(FormView):
 
     def form_valid(self, form):
         # Save the user for login
-        form.save()  
+        form.save()
+        messages.success(self.request, 'Account created successfully. Please login.')
         return super().form_valid(form)
 
 
@@ -124,6 +126,7 @@ class LoginView(FormView):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(self.request, user)
+            messages.success(self.request, 'You have been logged in successfully.')
             return redirect(self.get_success_url())
         else:
             # error message for incorrect login details
