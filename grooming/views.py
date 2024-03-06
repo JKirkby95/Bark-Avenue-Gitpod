@@ -52,19 +52,16 @@ class BookingView(TemplateView):
             return redirect('appointments')
         return render(request, self.template_name, {'form': form})
 
-
 class EditAppointmentView(TemplateView):
     '''
     class for editing the appointments
     '''
     template_name = 'edit_appointment.html'
-    # login required for this page
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
-    # getting the appointment id
     def get(self, request, appointment_id):
         appointment = get_object_or_404(Appointment, id=appointment_id)
         # Check if the user is the owner of the appointment
@@ -72,8 +69,7 @@ class EditAppointmentView(TemplateView):
             return redirect('userauth')  # Redirect to custom permission denied page
         form = AppointmentForm(instance=appointment)
         return render(request, self.template_name, {'form': form, 'appointment_id': appointment_id})
-        
-    # saving the new appointment details and redirecting user
+
     def post(self, request, appointment_id):
         appointment = get_object_or_404(Appointment, id=appointment_id)
         # Check if the user is the owner of the appointment
@@ -82,6 +78,8 @@ class EditAppointmentView(TemplateView):
         form = AppointmentForm(request.POST, instance=appointment)
         if form.is_valid():
             form.save()
+            # Add success message
+            messages.success(request, 'Appointment updated successfully.')
             return redirect('appointments')
         else:
             # Form is not valid, render the form again with errors
@@ -164,6 +162,7 @@ class CustomLogoutView(LogoutView):
     def get_next_page(self):
         # Return user to home screen when logged out
         return reverse_lazy('index')
+
 
 class UserauthView(TemplateView):
     '''

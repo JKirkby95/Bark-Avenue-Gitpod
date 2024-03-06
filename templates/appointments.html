@@ -54,7 +54,7 @@
 </div>
 <!-- import jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- script for deleting appointments from database -->
+<!-- Script for deleting appointments from the database -->
 <script>
     $(document).ready(function () {
         $('.delete-button').click(function (event) {
@@ -68,24 +68,25 @@
         });
 
         // Handle confirm delete button click
-        $('#confirmDelete').click(function() {
+        $('#confirmDelete').click(function () {
             // Get the appointment ID from the confirm delete button
             var appointmentId = $(this).data('appointment-id');
 
             // Send AJAX request to delete endpoint
             $.ajax({
-                url: '/delete-appointment/' + appointmentId + '/', 
-                type: 'POST', 
+                url: '/delete-appointment/' + appointmentId + '/',
+                type: 'POST',
                 data: {
                     'csrfmiddlewaretoken': '{{ csrf_token }}' // Add CSRF token
                 },
-                success: function(response) {
-                    // Handle success response, if needed
-                    console.log('Appointment deleted successfully');
+                success: function (response) {
+                    // Display a success message using JavaScript alert
+                    alert('Appointment deleted successfully.');
+
                     // Refresh the page after deletion
                     window.location.reload();
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr, status, error) {
                     // Handle error response, if needed
                     console.error('Error deleting appointment:', error);
                 }
