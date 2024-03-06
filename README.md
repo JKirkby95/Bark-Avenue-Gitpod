@@ -485,7 +485,27 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
 | Login       | ![login page](media/baloginpage.png) | ![login page](media/mobilelogin.png)    |
 | Sign Up     | ![sign up page](media/basignuppage.png) |  ![sign up page](media/mobilesignup.png)   |
 
+***
 
+## Credits
+
+- I'd actually like to credit my mom for inspiring this site and for helping with the details.
+
+- Inspiration was taken various users from [Youtube](https://www.youtube.com/).
+
+- I used [giphy.com](https://giphy.com/gifs/dog-face-front-camera-7XuKKmGiaxXe6EjOj4) for the dog gif on the page for appointment security.
+
+***
+
+## Acknowledgements
+
+- Everyone in the Code Institute Slack community.
+
+- My mentor Marcel, for his fantastic feeback and for breaking this down and making it seem possible for me.
+
+- My family, for allowing me some time to myself to complete this.
+
+[Back to top ⇧](#Bark-Avenue-Grooming)
 
 
 
